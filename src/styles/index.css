@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Inconsolata";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../../public/fonts/Inconsolata.ttf");
+}
+
+:root {
+    --bg-clr: #f8fafc;
+    --font-clr: #0a161f;
+    --font-primary: 'Inconsolata';
+    --font-secondary: "Inconsolata";
+    --type-width: "500px";
+}
+
+body {
+    background-color: var(--bg-clr);
+    color: var(--font-clr);
+    font-family: var(--font-primary);
+}
+
+.hero-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: solid 3px var(--font-clr);
+    font-family: var(--font-secondary);
+}
+
+.card-show {
+    visibility: visible;
+}
+
+.card-expand {
+    flex-grow: 10;
+}
+
+.hero-animate {
+    animation: typing-animate 4s steps(32, end), caret-animate 600ms steps(32, end) infinite;
+}
+
+.card-drop-x {
+    animation: card-drop-x 1s linear, bobble-x 0.2s 1s ease-in-out;
+}
+
+.card-drop-y {
+    animation: card-drop-y 1s linear, bobble-y 0.2s 1s ease-in-out;
+}
+
+@keyframes typing-animate {
+    from { 
+        width: 0 
+    }
+    to { 
+        width: var(--type-width); 
+    }
+}
+
+@keyframes caret-animate {
+    form { 
+        border-right-color: var(--font-clr); 
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes card-drop-x {
+    0% {
+        transform: translateX(-120%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%)
+    }
+}
+
+@keyframes card-drop-y {
+    0% {
+        transform:  translateY(-120%);
+    }
+    50% {
+        transform: translateY(-50%);
+    }
+    
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes bobble-x {
+    0% {
+        transform: translateX(0px);
+    }
+ 
+    50% {
+        transform: translateX(12px);
+    }
+ 
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes bobble-y {
+    0% {
+        transform: translateY(0px);
+    }
+ 
+    50% {
+        transform: translateY(12px);
+    }
+ 
+    100% {
+        transform: translateY(0px);
+    }
+}
