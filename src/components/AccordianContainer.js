@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AccordianCard from "./AccordianCard";
 import sleep from "../utils/helper.js"
 import AboutInsert from "./AboutInsert";
+import SettingsInsert from "./SettingsInsert";
 
 /*
 Main container for site page components 
@@ -84,7 +85,7 @@ function AccordianContainer() {
                 header="Settings"
                 isExpanded={cardExpanded["card-settings"]}
                 >
-                <div>I am a placeholder</div>
+                <SettingsInsert/>
             </AccordianCard>
         </div>
     );

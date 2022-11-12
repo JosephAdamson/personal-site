@@ -33,6 +33,25 @@ body {
     font-family: var(--font-primary);
 }
 
+input[type="checkbox"]:checked + .slider {
+    -webkit-transform: translateX(90%);
+    -ms-transform: translateX(90%);
+    transform: translateX(90%);
+}
+
+label {
+    border-color: var(--font-clr);
+}
+
+.slider {
+    position: absolute;
+    height: 94%;
+    width: 46%;
+    border: 2px solid var(--font-clr);
+    border-radius: 1rem;
+    transition: transform 0.4s linear;
+}
+
 .hero-text {
     overflow: hidden;
     white-space: nowrap;
