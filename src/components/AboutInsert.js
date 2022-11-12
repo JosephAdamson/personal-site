@@ -1,6 +1,8 @@
 import vr_img from "../assets/images/metaverse_warrior.gif"
 
-
+/*
+Pseudo container for the 'About' section 
+*/
 function AboutInsert() {
     return (
         <div className="flex flex-col justify-center">

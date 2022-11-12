@@ -17,6 +17,16 @@
     --type-width: "500px";
 }
 
+[data-theme="light"] {
+    --bg-clr: #f8fafc;
+    --font-clr: #0a161f;
+}
+
+[data-theme="dark"] {
+    --bg-clr: #0a161f;
+    --font-clr: #f8fafc;
+}
+
 body {
     background-color: var(--bg-clr);
     color: var(--font-clr);
@@ -36,6 +46,11 @@ body {
 
 .card-expand {
     flex-grow: 10;
+}
+
+.show-content {
+    visibility: visible;
+    opacity: 1;
 }
 
 .hero-animate {
