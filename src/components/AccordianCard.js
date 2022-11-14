@@ -23,7 +23,7 @@ function AccordianCard(props) {
     return (
         <div className="flex flex-col h-20 w-full border-2 border-black rounded items-center 
         justify-center p-4 md:flex-row invisible md:h-full md:w-20 transition-width 
-        ease-in-out duration-[1.5s]" id={props.id}>
+        ease-in-out duration-[1.5s] acc-card" id={props.id}>
             <h1 className="md:-rotate-90 w-100 h-10 truncate 
             text-center text-3xl flex-shrink-0 mt-1">{props.header}</h1>
             <div className={

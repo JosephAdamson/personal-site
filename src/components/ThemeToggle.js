@@ -14,15 +14,13 @@ function darkMode() {
 function ThemeToggle() {
     const checkbox = useRef(null);
 
-    // load theme on start-up.
+    // load correct button position.
     useEffect(() => {
         const themeOnLoad = localStorage.getItem("theme");
         if (themeOnLoad) {
             if (themeOnLoad === 'light') {
-                document.documentElement.setAttribute("data-theme", "light");
                 checkbox.current.checked = true;
             } else {
-                document.documentElement.setAttribute("data-theme", "dark");
                 checkbox.current.checked = false;
             }
         }

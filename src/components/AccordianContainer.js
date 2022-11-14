@@ -25,10 +25,12 @@ function AccordianContainer() {
             cards.forEach((card) => {
                 if (card.id === targ.id) {
                     card.classList.add("card-expand");
-                    updateExpanded[card.id] = true
+                    card.classList.remove("card-wiggle");
+                    updateExpanded[card.id] = true;
                     
                 } else {
                     card.classList.remove("card-expand");
+                    card.classList.add("card-wiggle");
                     updateExpanded[card.id] = false;
                 }
             })
@@ -45,6 +47,7 @@ function AccordianContainer() {
             }
             await sleep(1000);
             expand(cards[0]);
+            cards.forEach(card => {card.classList.remove(animation)})
         }
         // get the screen width to determine the animation
         const animation = (window.innerWidth < 768) ? "card-drop-x" : "card-drop-y";
