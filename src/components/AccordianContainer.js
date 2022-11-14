@@ -3,6 +3,7 @@ import AccordianCard from "./AccordianCard";
 import sleep from "../utils/helper.js"
 import AboutInsert from "./AboutInsert";
 import SettingsInsert from "./SettingsInsert";
+import ContactInsert from "./ContactInsert";
 
 /*
 Main container for site page components 
@@ -81,7 +82,7 @@ function AccordianContainer() {
                 header="Contact"
                 isExpanded={cardExpanded["card-contact"]}
                 >
-                <div>I am a placeholder</div>
+                <ContactInsert/>
             </AccordianCard>
             <AccordianCard 
                 id="card-settings" 

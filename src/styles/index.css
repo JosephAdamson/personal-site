@@ -18,6 +18,7 @@ Variables and global styles
 :root {
     --bg-clr: #f8fafc;
     --font-clr: #0a161f;
+    --outline-clr: #e37df5;
     --font-primary: 'Inconsolata';
     --font-secondary: "Inconsolata";
     --type-width: "500px";
@@ -47,6 +48,37 @@ input[type="checkbox"]:checked + .slider {
 
 label {
     border-color: var(--font-clr);
+}
+
+input[type="text"] {
+    border: 1.5px solid var(--font-clr);
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    color: #0a161f;
+}
+
+input[type="text"]:focus {
+    outline: 2px solid var(--outline-clr);
+    outline-offset: 2px;
+    /* border: 2px solid var(--outline-clr); */
+}
+
+textarea {
+    border: 1.5px solid var(--font-clr);
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    color: #0a161f;
+}
+
+textarea:focus {
+    outline: 2px solid var(--outline-clr);
+    outline-offset: 2px;
+}
+
+input[type="submit"] {
+    background-color: var(--font-clr);
+    color: var(--bg-clr);
+    border-radius: 0.2rem;
 }
 
 ::-webkit-scrollbar {
