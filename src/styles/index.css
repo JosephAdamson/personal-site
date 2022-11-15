@@ -86,6 +86,12 @@ input[type="submit"] {
     border-radius: 0.2rem;
 }
 
+button {
+    background-color: var(--font-clr);
+    color: var(--bg-clr);
+    border-radius: 0.2rem;
+}
+
 ::-webkit-scrollbar {
     background-color: var(--bg-clr);
     width: 0.2rem;
