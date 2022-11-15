@@ -6,20 +6,20 @@ function ContactInsert() {
         className="flex flex-col items-center justify-center md:h-full" 
         method="POST"
         name="contact"
-        data-netlify={true}
-        onSubmit="submit">
+        onSubmit="submit"
+        netlify>
             <div className="flex flex-col justify-between w-2/3">
-                <label htmlFor="name">name</label>
+                <label>name</label>
                 <input type="text" name="sender-name"/>
             </div>
             <br/>
             <div className="flex flex-col justify-between w-2/3">
-                <label htmlFor="">email</label>
+                <label>email</label>
                 <input type="text" name="sender-email"/>
             </div>
             <br/>
             <div className="flex flex-col justify-between w-2/3 h-40">
-                <label htmlFor="">comment</label>
+                <label>comment</label>
                 <textarea className="h-full" name="sender-comment"/>
             </div>
             <div className="flex w-2/3 ustify-start my-4">
