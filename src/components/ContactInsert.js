@@ -6,7 +6,7 @@ function ContactInsert() {
         className="flex flex-col items-center justify-center md:h-full" 
         method="POST"
         name="contact"
-        data-netlify="true"
+        data-netlify={true}
         onSubmit="submit">
             <div className="flex flex-col justify-between w-2/3">
                 <label htmlFor="name">name</label>
