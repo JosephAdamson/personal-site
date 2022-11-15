@@ -7,7 +7,7 @@ function AboutInsert() {
     return (
         <div className="flex flex-col justify-center">
             <div className="flex m-4 justify-center">
-                <img className="object-cover w-24 h-36 rounded-md
+                <img className="object-cover w-24 h-36 md:w-32 md:h-48 rounded-md
                 hover:translate-y-1" 
                 src={vr_img} alt="me.jpeg" />
             </div>

@@ -21,6 +21,8 @@ Variables and global styles
     --outline-clr: #e37df5;
     --font-primary: 'Inconsolata';
     --font-secondary: "Inconsolata";
+    --font-size-primary: 0.8rem;
+    --font-size-seconadry: 1.2rem;
     --type-width: "500px";
 }
 
@@ -38,6 +40,7 @@ body {
     background-color: var(--font-clr);
     color: var(--font-clr);
     font-family: var(--font-primary);
+    font-size: var(--font-size-primary);
 }
 
 input[type="checkbox"]:checked + .slider {
@@ -239,5 +242,11 @@ Custom styles
 
     100% {
         transform: rotate(0deg)
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: var(--font-size-seconadry);
     }
 }
