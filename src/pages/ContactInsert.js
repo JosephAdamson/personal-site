@@ -6,7 +6,7 @@ function ContactInsert() {
     const successBox = useRef(null);
 
     function showSuccess() {
-        const formData = contactForm.formData;
+        const formData = contactForm.current.formData;
         console.log(formData);
     }
 
@@ -19,11 +19,13 @@ function ContactInsert() {
             className="flex flex-col items-center justify-center md:h-full" 
             method="POST"
             name="contact"
+            id="contact"
+            type="submit"
             ref={contactForm}
             onSubmit={(e) => {
                 e.preventDefault();
                 showSuccess();
-                contactForm.submit();
+                contactForm.current.submit();
                 return false;
             }}
             netlify>
