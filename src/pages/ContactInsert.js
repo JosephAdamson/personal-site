@@ -1,6 +1,15 @@
+import { useRef } from "react";
 
 
 function ContactInsert() {
+    const contactForm = useRef(null);
+    const successBox = useRef(null);
+
+    function showSuccess() {
+        const formData = contactForm.formData;
+        console.log(formData);
+    }
+
     return (
         <div className="flex flex-col">
             <div className="flex justify-center my-2">
@@ -10,8 +19,15 @@ function ContactInsert() {
             className="flex flex-col items-center justify-center md:h-full" 
             method="POST"
             name="contact"
-            onSubmit="submit"
+            ref={contactForm}
+            onSubmit={(e) => {
+                e.preventDefault();
+                showSuccess();
+                contactForm.submit();
+                return false;
+            }}
             netlify>
+                <div ref={successBox} className="flex h-12 w-2/3 border justify-center">hello</div>
                 <div className="flex flex-col justify-between w-2/3">
                     <label>name</label>
                     <input type="text" name="sender-name"/>

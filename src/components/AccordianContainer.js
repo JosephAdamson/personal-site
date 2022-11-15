@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import AccordianCard from "./AccordianCard";
 import sleep from "../utils/helper.js"
-import AboutInsert from "./AboutInsert";
-import SettingsInsert from "./SettingsInsert";
-import ContactInsert from "./ContactInsert";
+import AboutInsert from "../pages/AboutInsert";
+import SettingsInsert from "../pages/SettingsInsert";
+import ContactInsert from "../pages/ContactInsert";
 
 /*
 Main container for site page components 
