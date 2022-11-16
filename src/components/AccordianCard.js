@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import sleep from '../utils/helper.js'
 
 /*
@@ -6,6 +6,7 @@ Main conatiner for site 'sections' (About, Projects, etc.)
 */
 function AccordianCard(props) {
     const content = useRef(null);
+    const [contentIsVisible, setContentIsVisible] = useState(false)
 
     useEffect(() => {
         async function contentFade() {
@@ -17,7 +18,6 @@ function AccordianCard(props) {
             }
         }
         contentFade();
-        
     });
     
     return (

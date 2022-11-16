@@ -19,8 +19,6 @@ Variables and global styles
     --bg-clr: #f8fafc;
     --font-clr: #0a161f;
     --outline-clr: #e37df5;
-    --success-clr: #77ff6e;
-    --fail-clr: #ff462e;
     --font-primary: 'Inconsolata';
     --font-secondary: "Inconsolata";
     --font-size-primary: 0.8rem;
@@ -136,9 +134,8 @@ Custom styles
     opacity: 1;
 }
 
-.show-contact-form-success {
+.alert-show {
     visibility: visible;
-    background-color: var(--success-clr);
 }
 
 .card-drop-x {

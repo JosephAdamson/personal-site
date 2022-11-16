@@ -5,7 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
+      colors : {
+        successClr: "#77ff6e",
+        failClr: "#ff462e"
       }
     },
   },

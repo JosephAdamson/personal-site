@@ -1,12 +1,12 @@
 import { useRef, useEffect } from "react";
 import Toggle from "./Toggle";
 
-function lightMode() {
+const lightMode = () => {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
 }
 
-function darkMode() {
+const darkMode = () => {
     localStorage.setItem("theme", "dark");
     document.documentElement.setAttribute("data-theme", "dark");
 }
@@ -46,7 +46,6 @@ function ThemeToggle() {
             <Toggle 
                 forwardedRef={checkbox}
                 onClick={() => {
-                    console.log(checkbox.current.checked);
                     if (checkbox.current.checked) {
                         lightMode();
                     } else {
