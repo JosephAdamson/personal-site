@@ -80,6 +80,12 @@ function AccordianContainer() {
                 await sleep(500);
             }
             await sleep(1000);
+            // remove animations
+            const updatedAnimations = {...animations}
+            Object.keys(updatedAnimations).forEach((key) => {
+                animations[key] = "";
+            });
+            setAnimations({...updatedAnimations});
             const about = document.querySelector("#card-about");
             expand(about);
         }
