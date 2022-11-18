@@ -10,29 +10,61 @@ Main container for site page components
 */
 function AccordianContainer() {
 
-    const [cardExpanded, setIsExpanded] = useState(
+    const [isExpanded, setIsExpanded] = useState(
         {
-            "card-about": true,
+            "card-about": false,
+            "card-projects": false,
+            "card-contact": false,
+            "card-settings": false
+        }
+    );
+    const [isLoaded, setIsLoaded] = useState(
+        {
+            "card-about": false,
             "card-projects": false,
             "card-contact": false,
             "card-settings": false
         }
     );
 
-    function expand(targ) {
+    const [animations, setAnimations] = useState(
+        {
+            "card-about": "",
+            "card-projects": "",
+            "card-contact": "",
+            "card-settings": ""
+        }
+    );
+
+    const content = {
+        "card-about": <AboutInsert/>,
+        "card-projects": <div>I am a placeholder</div>,
+        "card-contact": <ContactInsert/>,
+        "card-settings": <SettingsInsert/>
+    }
+ 
+    const createCard = (id, content) => {
+        return <AccordianCard
+            key={id}
+            id={id}
+            header={id.split("-")[1]}
+            isExpanded={isExpanded[id]}
+            isLoaded={isLoaded[id]}
+            animation={animations[id]}
+        >
+            {content}
+        </AccordianCard>
+    }
+
+    const expand = (targ) => {
         if (targ !== null) {
-            const cards = document.querySelectorAll("[id^=card-]");
-            const updateExpanded = {...cardExpanded};
-            cards.forEach((card) => {
-                if (card.id === targ.id) {
-                    card.classList.add("card-expand");
-                    card.classList.remove("card-wiggle");
-                    updateExpanded[card.id] = true;
+            const updateExpanded = {...isExpanded};
+            Object.keys(isExpanded).forEach((key) => {
+                if (key === targ.id) {
+                    updateExpanded[key] = true;
                     
                 } else {
-                    card.classList.remove("card-expand");
-                    card.classList.add("card-wiggle");
-                    updateExpanded[card.id] = false;
+                    updateExpanded[key] = false;
                 }
             })
             setIsExpanded({...updateExpanded});
@@ -40,21 +72,20 @@ function AccordianContainer() {
     }
 
     // initial page animation
-    useEffect(() => {
-        async function animateSetup(cards, animation) {
-            for (let card of cards) {
-                card.classList.add(animation, "card-show");
+    useEffect(() => {  
+        const animateSetup = async (animation) => {
+            for (let key of Object.keys(isLoaded)) {
+                setIsLoaded((isLoaded) => {return {...isLoaded,[key]: true}});
+                setAnimations((animations) => {return {...animations, [key]: animation}})
                 await sleep(500);
             }
             await sleep(1000);
-            expand(cards[0]);
-            cards.forEach(card => {card.classList.remove(animation)})
+            const about = document.querySelector("#card-about");
+            expand(about);
         }
         // get the screen width to determine the animation
         const animation = (window.innerWidth < 768) ? "card-drop-x" : "card-drop-y";
-        const cards = Array.from(document.querySelectorAll("[id^=card-]"));
-        animateSetup(cards, animation);
-
+        animateSetup(animation);
     },[])
 
     return (
@@ -63,34 +94,7 @@ function AccordianContainer() {
                 const targ = e.target.closest("[id^=card-]")
                 expand(targ);
             }}>
-            <AccordianCard 
-                id="card-about" 
-                header="About" 
-                isExpanded={cardExpanded["card-about"]}
-                >
-                <AboutInsert/>
-            </AccordianCard>
-            <AccordianCard 
-                id="card-projects" 
-                header="Projects"
-                isExpanded={cardExpanded["card-projects"]}
-                >
-                <div>I am a placeholder</div>
-            </AccordianCard>
-            <AccordianCard 
-                id="card-contact" 
-                header="Contact"
-                isExpanded={cardExpanded["card-contact"]}
-                >
-                <ContactInsert/>
-            </AccordianCard>
-            <AccordianCard 
-                id="card-settings" 
-                header="Settings"
-                isExpanded={cardExpanded["card-settings"]}
-                >
-                <SettingsInsert/>
-            </AccordianCard>
+            {Object.keys(content).map((key) => createCard(key, content[key]))}
         </div>
     );
 }
