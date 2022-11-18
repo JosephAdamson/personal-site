@@ -27,7 +27,7 @@ function AccordianCard(props) {
         id={props.id}
         >
             <h1 className="md:-rotate-90 w-100 h-10 truncate 
-            text-center text-3xl flex-shrink-0 mt-1">{props.header}</h1>
+            text-center text-3xl flex-shrink-0 mt-1 capitalize">{props.header}</h1>
             <div className={
                 props.isExpanded ?
                 `flex flex-col h-full w-full overflow-y-auto opacity-0 transition-opacity duration-[1.9s]

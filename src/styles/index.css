@@ -152,6 +152,11 @@ Custom styles
     animation: wiggle 0.25s ease-in-out infinite;
 }
 
+.alert-box {
+    animation: fade-out 1s linear;
+    animation-delay: 5.2s;
+}
+
 /* card drop x */
 @-webkit-keyframes card-drop-x {
     0% {-webkit-transform: translateX(-120%);}
@@ -190,63 +195,57 @@ Custom styles
 }
 
 @-webkit-keyframes bobble-x {
-    0% {-webkit-transform: translateX(0px);}
+    0%, 100% {-webkit-transform: translateX(0px);}
     50% {-webkit-transform: translateX(2%);}
-    100% {-webkit-transform: translateX(0px);}
 }
 
 @-moz-keyframes bobble-x {
-    0% {-moz-transform: translateX(0px);}
+    0%, 100% {-moz-transform: translateX(0px);}
     50% {-moz-transform: translateX(2%);}
-    100% {-moz-transform: translateX(0px);}
 }
 
 @keyframes bobble-x {
-    0% {transform: translateX(0px);}
+    0%, 100% {transform: translateX(0px);}
     50% {transform: translateX(2%);}
-    100% {transform: translateX(0px);}
 }
 
 @-webkit-keyframes bobble-y {
-    0% {-webkit-transform: translateY(0px);}
+    0%, 100% {-webkit-transform: translateY(0px);}
     50% {-webkit-transform: translateY(2%);}
-    100% {-webkit-transform: translateY(0px);}
 }
 
 @-moz-keyframes bobble-y {
-    0% {-moz-transform: translateY(0px);}
+    0%, 100% {-moz-transform: translateY(0px);}
     50% {-moz-transform: translateY(2%);}
-    100% {-moz-transform: translateY(0px);}
 }
 
 @keyframes bobble-y {
-    0% {transform: translateY(0px);}
+    0%, 100% {transform: translateY(0px);}
     50% {transform: translateY(2%);}
-    100% {transform: translateY(0px);}
 }
 
 @-webkit-keyframes wiggle {
-    0% {-webkit-transform: rotate(0deg);}
+    0%, 50%, 100% {-webkit-transform: rotate(0deg);}
     25% {-webkit-transform: rotate(1deg);}
-    50% {-webkit-transform: rotate(0deg);}
     75% {-webkit-transform: rotate(-1deg);}
-    100% {-webkit-transform: rotate(0deg);}
 }
 
 @-moz-keyframes wiggle {
-    0% {-moz-transform: rotate(0deg);}
+    0%, 50%, 100% {-moz-transform: rotate(0deg);}
     25% {-moz-transform: rotate(1deg);}
-    50% {-moz-transform: rotate(0deg);}
     75% {-moz-transform: rotate(-1deg);}
-    100% {-moz-transform: rotate(0deg);}
 }
 
 @keyframes wiggle {
-    0% {transform: rotate(0deg);}
+    0%, 50%, 100% {transform: rotate(0deg);}
     25% {transform: rotate(1deg);}
-    50% {transform: rotate(0deg);}
     75% {transform: rotate(-1deg);}
-    100% {transform: rotate(0deg);}
+}
+
+@keyframes fade-out {
+    0% {opacity: 1}
+    50% {opactiy: 0.5}
+    100% {opacity: 0;}
 }
 
 @media screen and (min-width: 768px) {

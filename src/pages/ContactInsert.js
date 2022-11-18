@@ -29,11 +29,13 @@ function ContactInsert() {
 
     const showAlert = () => {
         console.log(isError);
-        const box = isError ?
-            <div className="flex h-12 w-2/3 justify-center bg-[#ff462e]">hello</div> :
-            <div className="flex h-12 w-2/3 justify-center bg-[#77ff6e]">hello</div> 
 
-        return box;
+        return <div className={`flex w-2/3 justify-center rounded-md alert-box p-2 ${
+            isError ? "bg-[#ff462e]" : "bg-[#77ff6e]"
+        }`}>{isError ? 
+            `Error: Seems like you're missing something chief... \n
+        Check name, email and and the comment box have been filled in.` : 
+        `Success: Thanks for the message I'll get back to you when I can`}</div>
     }
 
     useEffect(() => {
@@ -43,14 +45,14 @@ function ContactInsert() {
         setTimeout(() => {
             setDisplayAlert(false);
             setSubmitted(false);
-        }, 3000);
+        }, 6000);
     }, [submitted]);
 
 
     return (
         <div className="flex flex-col">
             <div className="flex justify-center my-2">
-                <h1>Drop me a message!</h1>
+                <h1 className="text-lg">Drop me a message!</h1>
             </div>
             <form 
             className="flex flex-col items-center justify-center md:h-full" 
@@ -65,7 +67,7 @@ function ContactInsert() {
             netlify>
                 {displayAlert ?
                 showAlert():
-                <div className="flex h-12 w-2/3 justify-center"></div>
+                <div className="flex w-2/3"></div>
                 }
                 <div className="flex flex-col justify-between w-2/3">
                     <label>name</label>
