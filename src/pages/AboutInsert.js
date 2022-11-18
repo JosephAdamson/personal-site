@@ -1,14 +1,19 @@
-import vr_img from "../assets/images/metaverse_warrior.gif"
+import vr_img from "../assets/metaverse_warrior.gif"
+import github from "../assets/github.png"
+import ThemeToggle from "../components/ThemeToggle";
+import Footer from "../components/Footer";
 
 /*
 Pseudo container for the 'About' section 
 */
 function AboutInsert() {
     return (
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col items-center m-6">
+                <ThemeToggle/>
+            </div>
             <div className="flex m-4 justify-center">
-                <img className="object-cover w-24 h-36 md:w-32 md:h-48 rounded-md
-                hover:translate-y-1" 
+                <img className="object-cover w-24 h-36 md:w-32 md:h-48 rounded-md" 
                 src={vr_img} alt="me.jpeg" />
             </div>
             <div className="px-4 m-6">
@@ -24,6 +29,7 @@ function AboutInsert() {
                     learn new things and talk smack about films.
                 </p>
             </div>
+            <Footer/>
         </div>
     )
 }

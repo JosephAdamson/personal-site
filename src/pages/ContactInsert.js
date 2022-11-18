@@ -1,4 +1,5 @@
 import { useEffect, useState} from "react";
+import Footer from "../components/Footer";
 
 
 function ContactInsert() {
@@ -27,33 +28,20 @@ function ContactInsert() {
         setSubmitted(true);
     }
 
-    const showAlert = () => {
-        console.log(isError);
-
-        return <div className={`flex w-2/3 justify-center rounded-md alert-box p-2 ${
-            isError ? "bg-[#ff462e]" : "bg-[#77ff6e]"
-        }`}>{isError ? 
-            `Error: Seems like you're missing something chief... \n
-        Check name, email and and the comment box have been filled in.` : 
-        `Success: Thanks for the message I'll get back to you when I can`}</div>
-    }
-
     useEffect(() => {
-        if (submitted) {
+        if (submitted && isError) {
             setDisplayAlert(true);
+
+            setTimeout(() => {
+                setDisplayAlert(false);
+                setSubmitted(false);
+            }, 8000);
         }
-        setTimeout(() => {
-            setDisplayAlert(false);
-            setSubmitted(false);
-        }, 6000);
-    }, [submitted]);
+    }, [isError, submitted]);
 
 
     return (
-        <div className="flex flex-col">
-            <div className="flex justify-center my-2">
-                <h1 className="text-lg">Drop me a message!</h1>
-            </div>
+        <div className="flex flex-col p-4">
             <form 
             className="flex flex-col items-center justify-center md:h-full" 
             method="POST"
@@ -65,10 +53,16 @@ function ContactInsert() {
                 validateFormData();
             }}
             netlify>
-                {displayAlert ?
-                showAlert():
-                <div className="flex w-2/3"></div>
-                }
+                <div className="flex w-2/3 justify-center">
+                    {displayAlert ?
+                    <div className="flex w-10/12 justify-center rounded-md px-2 py-1 alert-box bg-[#cf0a1e]">
+                    <p><span className="font-bold">Error:</span> Seems like you're missing something chief...
+                    Check that the name, email and comment box have been filled in.</p></div> :
+                    ""}
+                </div>
+                <div className="flex justify-center my-2">
+                    <h1 className="text-2xl">Drop me a message!</h1>
+                </div>
                 <div className="flex flex-col justify-between w-2/3">
                     <label>name</label>
                     <input type="text" name="name" onChange={nameOnChangeHandler}/>
@@ -84,7 +78,7 @@ function ContactInsert() {
                     <textarea className="h-full" name="comment" onChange={commentOnChangeHandler}/>
                 </div>
                 <div className="flex w-2/3 ustify-start my-4">
-                    <button className="p-1" form="contact">Submit</button>
+                    <button className="p-1" form="contact">submit</button>
                 </div>
                 {/* connect netlify form */}
                 <input type="hidden" name="form-name" value="contact" />

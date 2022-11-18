@@ -15,6 +15,13 @@ Variables and global styles
     src: url("../../public/fonts/Inconsolata.ttf");
 }
 
+@font-face {
+    font-family: "Inconsolata";
+    font-style: bold;
+    font-weight: bold;
+    src: url("../../public/fonts/Inconsolata-Bold.ttf");
+}
+
 :root {
     --bg-clr: #f8fafc;
     --font-clr: #0a161f;
@@ -90,9 +97,19 @@ button {
     border-radius: 0.2rem;
 }
 
+
+button:hover {
+    filter: brightness(0.85);
+}
+
 ::-webkit-scrollbar {
     background-color: var(--bg-clr);
     width: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-clr);
+    border-style: none;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -153,8 +170,9 @@ Custom styles
 }
 
 .alert-box {
-    animation: fade-out 1s linear;
-    animation-delay: 5.2s;
+    border: 2px solid var(--font-clr);
+    animation: fade-out 0.6s linear;
+    animation-delay: 7.5s;
 }
 
 /* card drop x */

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AccordianCard from "./AccordianCard";
 import sleep from "../utils/helper.js"
 import AboutInsert from "../pages/AboutInsert";
-import SettingsInsert from "../pages/SettingsInsert";
+import BlogInsert from "../pages/BlogInsert";
 import ContactInsert from "../pages/ContactInsert";
 
 /*
@@ -15,7 +15,7 @@ function AccordianContainer() {
             "card-about": false,
             "card-projects": false,
             "card-contact": false,
-            "card-settings": false
+            "card-blog": false
         }
     );
     const [isLoaded, setIsLoaded] = useState(
@@ -23,7 +23,7 @@ function AccordianContainer() {
             "card-about": false,
             "card-projects": false,
             "card-contact": false,
-            "card-settings": false
+            "card-blog": false
         }
     );
 
@@ -32,15 +32,15 @@ function AccordianContainer() {
             "card-about": "",
             "card-projects": "",
             "card-contact": "",
-            "card-settings": ""
+            "card-blog": ""
         }
     );
 
     const content = {
         "card-about": <AboutInsert/>,
-        "card-projects": <div>I am a placeholder</div>,
+        "card-projects": <BlogInsert/>,
         "card-contact": <ContactInsert/>,
-        "card-settings": <SettingsInsert/>
+        "card-blog": <BlogInsert/>
     }
  
     const createCard = (id, content) => {
