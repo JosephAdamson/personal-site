@@ -6,7 +6,7 @@ Pseudo container for the 'About' section
 */
 function AboutInsert() {
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-left items-center">
             <div className="flex flex-col items-center m-6">
                 <ThemeToggle/>
             </div>
@@ -14,7 +14,7 @@ function AboutInsert() {
                 <img className="object-cover w-24 h-36 md:w-32 md:h-48 rounded-md" 
                 src={vr_img} alt="me.jpeg" />
             </div>
-            <div className="px-4 m-6">
+            <div className="px-4 m-6 md:w-2/3">
                 <p>
                     I'm an aspiring web developer and code tinkerer with degrees in Film and Computer Science.
                     At the moment I'm looking to apply my grab-bag of tech skills to any junior dev roles that suit;
@@ -27,7 +27,6 @@ function AboutInsert() {
                     learn new things and talk smack about films.
                 </p>
             </div>
-            {/* <Footer/> */}
         </div>
     )
 }

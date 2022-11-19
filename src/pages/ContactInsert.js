@@ -79,7 +79,7 @@ function ContactInsert() {
                     <textarea className="h-full" name="comment" onChange={commentOnChangeHandler}/>
                 </div>
                 <div className="flex w-2/3 ustify-start my-4">
-                    <button className="p-1" form="contact">submit</button>
+                    <button form="contact">submit</button>
                 </div>
                 {/* connect netlify form */}
                 <input type="hidden" name="form-name" value="contact" />

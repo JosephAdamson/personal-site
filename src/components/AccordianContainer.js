@@ -4,6 +4,7 @@ import sleep from "../utils/helper.js"
 import AboutInsert from "../pages/AboutInsert";
 import BlogInsert from "../pages/BlogInsert";
 import ContactInsert from "../pages/ContactInsert";
+import ProjectInsert from "../pages/ProjectInsert";
 
 /*
 Main container for site page components 
@@ -38,10 +39,12 @@ function AccordianContainer() {
 
     const content = {
         "card-about": <AboutInsert/>,
-        "card-projects": <BlogInsert/>,
+        "card-projects": <ProjectInsert/>,
         "card-contact": <ContactInsert/>,
         "card-blog": <BlogInsert/>
     }
+
+    const [animationFinished, setAnimationFinshed] = useState(false);
  
     const createCard = (id, content) => {
         return <AccordianCard
@@ -88,6 +91,7 @@ function AccordianContainer() {
             setAnimations({...updatedAnimations});
             const about = document.querySelector("#card-about");
             expand(about);
+            setAnimationFinshed(true);
         }
         // get the screen width to determine the animation
         const animation = (window.innerWidth < 768) ? "card-drop-x" : "card-drop-y";
@@ -95,13 +99,17 @@ function AccordianContainer() {
     },[])
 
     return (
-        <div className="flex flex-col h-screen w-screen p-5 gap-5 md:flex-row" 
-            onClick={(e) => {
-                const targ = e.target.closest("[id^=card-]")
-                expand(targ);
-            }}>
-            {Object.keys(content).map((key) => createCard(key, content[key]))}
-        </div>
+        <>
+            <div className="relative flex flex-col h-screen w-screen p-5 gap-5 md:flex-row" 
+                onClick={(e) => {
+                    const targ = e.target.closest("[id^=card-]")
+                    expand(targ);
+                }}>
+                {Object.keys(content).map((key) => createCard(key, content[key]))}
+                {animationFinished ? null :
+                    <div className="absolute w-full h-full transparent inset-x-0 inset-y-0"></div>}
+            </div>
+        </>
     );
 }
 
