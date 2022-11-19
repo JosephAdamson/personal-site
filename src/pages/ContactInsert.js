@@ -1,5 +1,6 @@
 import { useEffect, useState} from "react";
-import Footer from "../components/Footer";
+import github from "../assets/github.png"
+import linkedin from "../assets/linkedin.png";
 
 
 function ContactInsert() {
@@ -61,7 +62,7 @@ function ContactInsert() {
                     ""}
                 </div>
                 <div className="flex justify-center my-2">
-                    <h1 className="text-2xl">Drop me a message!</h1>
+                    <h1 className="text-xl">Drop me a message!</h1>
                 </div>
                 <div className="flex flex-col justify-between w-2/3">
                     <label>name</label>
@@ -83,6 +84,19 @@ function ContactInsert() {
                 {/* connect netlify form */}
                 <input type="hidden" name="form-name" value="contact" />
             </form>
+            <div className="flex flex-col items-center">
+                <h1>Or find me at...</h1>
+                <div className="flex justify-center">
+                    <div className="flex m-4 h-10 w-10 md:h-14 md:w-14 justify-center">
+                        <a href="https://github.com/JosephAdamson" rel="noreferrer" target="_blank"><img 
+                        src={github} alt="me.jpeg"/></a>
+                    </div>
+                    <div className="flex m-4 h-10 w-10 md:h-14 md:w-14 justify-center">
+                        <a href="https://uk.linkedin.com/in/joseph-adamson-b677a513b" rel="noreferrer" target="_blank"><img 
+                        src={linkedin} alt="me.jpeg"/></a>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 
 
-function SettingsInsert() {
+function BlogInsert() {
 }
 
-export default SettingsInsert;
+export default BlogInsert;

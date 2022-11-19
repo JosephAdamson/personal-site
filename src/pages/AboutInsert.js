@@ -1,7 +1,5 @@
 import vr_img from "../assets/metaverse_warrior.gif"
-import github from "../assets/github.png"
 import ThemeToggle from "../components/ThemeToggle";
-import Footer from "../components/Footer";
 
 /*
 Pseudo container for the 'About' section 
@@ -29,7 +27,7 @@ function AboutInsert() {
                     learn new things and talk smack about films.
                 </p>
             </div>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }
