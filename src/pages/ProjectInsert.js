@@ -34,8 +34,10 @@ function ProjectInsert() {
     }
 
     return (
-        <div className="flex flex-col">
-            {Object.keys(projectData).map((key, i) => {
+        <div className="flex flex-col items-center p-2">
+            <div className="flex justify-center my-2">
+            </div>
+            {Object.keys(projectData).map((key) => {
                 return createProjectCard(key, projectData[key]);
             })}
         </div>

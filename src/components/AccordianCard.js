@@ -21,7 +21,7 @@ function AccordianCard(props) {
     
     return (
         <div className={`flex flex-col h-12 md:h-auto w-full border-2 border-black rounded items-center 
-        justify-center p-4 md:flex-row invisible md:h-full md:w-20 transition-width 
+        justify-center p- md:flex-row invisible md:h-full md:w-20 transition-width 
         ease-in-out duration-[1.5s] acc-card ${props.isExpanded ? "card-expand" : "card-wiggle"} 
         ${props.isLoaded ? "card-show" : ""} ${props.animation}`} 
         id={props.id}

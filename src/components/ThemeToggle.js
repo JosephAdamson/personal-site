@@ -32,7 +32,7 @@ function ThemeToggle() {
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                className="h-9 w-9 fill-current stroke-current p-1"
+                className="h-7 w-7 md:h-9 md:w-9 fill-current stroke-current p-1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
@@ -57,7 +57,7 @@ function ThemeToggle() {
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                className="h-10 w-10 fill-current stroke-current p-1"
+                className="h-8 w-8 md:h-10 md:w-10 fill-current stroke-current p-1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}

@@ -80,9 +80,9 @@ function AccordianContainer() {
             for (let key of Object.keys(isLoaded)) {
                 setIsLoaded((isLoaded) => {return {...isLoaded,[key]: true}});
                 setAnimations((animations) => {return {...animations, [key]: animation}})
-                await sleep(500);
+                await sleep(300);
             }
-            await sleep(1000);
+            await sleep(600);
             // remove animations
             const updatedAnimations = {...animations}
             Object.keys(updatedAnimations).forEach((key) => {
