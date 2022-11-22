@@ -1,5 +1,6 @@
 import ThemeButton from "../components/ThemeButton";
 import ProjectModal from "../components/ProjectModal";
+import Footer from "../components/Footer";
 
 const projectData = {
     0: {
@@ -59,6 +60,7 @@ function ProjectInsert() {
                     return createProjectCard(key, projectData[key]);
                 })}
             </div>
+            <Footer/>
         </div>
     )
 }

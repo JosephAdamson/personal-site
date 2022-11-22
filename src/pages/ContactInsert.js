@@ -1,6 +1,8 @@
-import { useEffect, useState} from "react";
+import { useEffect, useRef, useState} from "react";
 import github from "../assets/github.png"
 import linkedin from "../assets/linkedin.png";
+import ThemeButton from "../components/ThemeButton";
+import Footer from "../components/Footer";
 
 
 function ContactInsert() {
@@ -10,6 +12,7 @@ function ContactInsert() {
     const [isError, setIsError] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [displayAlert, setDisplayAlert] = useState(false);
+    const contactForm = useRef();
 
     const nameOnChangeHandler = (e) => {
         setName(e.target.value);
@@ -42,16 +45,23 @@ function ContactInsert() {
 
 
     return (
-        <div className="flex flex-col md:p-2">
+        <div className="flex flex-col items-center md:p-2">
+            <div className="flex items-start w-2/3 md:w-2/3 my-4">
+                <ThemeButton/>
+            </div>
             <form 
-            className="flex flex-col items-center justify-center md:h-full" 
+            className="flex flex-col items-center justify-center w-5/6 md:h-full" 
             method="POST"
             name="contact"
             id="contact"
+            ref={contactForm}
             type="submit"
             onSubmit={(e) => {
                 e.preventDefault();
                 validateFormData();
+                if(!isError) {
+                    contactForm.current.submit();
+                }
             }}
             netlify>
                 <div className="flex w-2/3 justify-center">
@@ -61,10 +71,10 @@ function ContactInsert() {
                     Check that the name, email and comment box have been filled in.</p></div> :
                     ""}
                 </div>
-                <div className="flex justify-center my-2">
+                {/* <div className="flex justify-center my-2">
                     <h1 className="text-xl">Drop me a message!</h1>
-                </div>
-                <hr className="h-1 w-2/3 rounded-sm m-2"/>
+                </div> */}
+                {/* <hr className="h-1 w-2/3 rounded-sm m-2"/> */}
                 <div className="flex flex-col justify-between w-2/3">
                     <label>name</label>
                     <input type="text" name="name" onChange={nameOnChangeHandler}/>
@@ -86,7 +96,7 @@ function ContactInsert() {
                 <input type="hidden" name="form-name" value="contact" />
             </form>
             <div className="flex flex-col items-center">
-            <hr className="h-1 w-2/3 rounded-sm m-1"/>
+            {/* <hr className="h-1 w-2/3 rounded-sm m-1"/> */}
                 <div className="flex justify-center">
                     <div className="flex m1 h-10 w-10 md:h-12 md:w-12 justify-center">
                         <a href="https://github.com/JosephAdamson" rel="noreferrer" target="_blank"><img 
@@ -98,6 +108,7 @@ function ContactInsert() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
