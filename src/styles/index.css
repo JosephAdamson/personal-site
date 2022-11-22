@@ -108,6 +108,10 @@ hr {
     background-color: var(--font-clr);
 }
 
+a:hover {
+    color: var(--outline-clr);
+}
+
 ::-webkit-scrollbar {
     background-color: var(--bg-clr);
     width: 0.2rem;
@@ -179,6 +183,10 @@ Custom styles
     border: 2px solid var(--font-clr);
     animation: fade-out 0.6s linear;
     animation-delay: 7.5s;
+}
+
+.project-modal {
+    background-color: var(--bg-clr);
 }
 
 /* card drop x */

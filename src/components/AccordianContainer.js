@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AccordianCard from "./AccordianCard";
 import sleep from "../utils/helper.js"
 import AboutInsert from "../pages/AboutInsert";
-import BlogInsert from "../pages/BlogInsert";
+// import BlogInsert from "../pages/BlogInsert";
 import ContactInsert from "../pages/ContactInsert";
 import ProjectInsert from "../pages/ProjectInsert";
 
@@ -41,7 +41,7 @@ function AccordianContainer() {
         "card-about": <AboutInsert/>,
         "card-projects": <ProjectInsert/>,
         "card-contact": <ContactInsert/>,
-        "card-blog": <BlogInsert/>
+        // "card-blog": <BlogInsert/>
     }
 
     const [animationFinished, setAnimationFinshed] = useState(false);

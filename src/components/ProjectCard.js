@@ -2,18 +2,12 @@
 
 function ProjectCard(props) {
     return (
-        <div className="flex flex-col w-5/6 items-center py-2 px-0 m-2 rounded-md">
-            <hr className="h-1 w-5/6 rounded-sm m-2"/>
-            <div className="flex w-5/6 justify-start gap-2 py-2">
-                <button><a href={props.github} target="_blank" rel="noreferrer">source</a></button>
-                <button><a href={props.live} target="_blank" rel="noreferrer">live</a></button>
+        <div className="relative flex h-20 md:h-40 w-70 md:w-full gap-1">
+            <div className="absolute flex justify-center items-center bg-black 
+            h-full w-full opacity-0 hover:opacity-50 rounded-md">
+                <h1 className=" text-lg md:text-3xl text-white">{props.title}</h1>
             </div>
-            <div className="w-5/6 py-2">
-                <img className="object-fit rounded-md" src={props.img} alt="project-img" />
-            </div>
-            <p className="flex w-5/6 py-2">
-                {props.description}
-            </p>
+            <img className="object-cover h-full w-full rounded-md border-[1px] border-black"src={props.imgMin} alt={props.title} />
         </div>
     )
 }

@@ -1,5 +1,5 @@
 
-
+// posible future extension
 function BlogInsert() {
 }
 
