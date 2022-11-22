@@ -65,7 +65,7 @@ label {
 input[type="text"] {
     border: 1.5px solid var(--font-clr);
     border-radius: 0.2rem;
-    padding: 0.4rem;
+    padding: 0.2rem;
     color: #0a161f;
 }
 
@@ -94,14 +94,16 @@ input[type="submit"] {
 }
 
 button {
-    background-color: var(--font-clr);
-    color: var(--bg-clr);
-    border-radius: 0.2rem;
-    padding: 0.4rem;
+    background-color: var(--bg-clr);
+    color: var(--font-clr);
+    border: 2px solid transparent;
+    padding: 0.2rem;
+    transition: all 0.8s linear;
 }
 
 button:hover {
-    filter: brightness(0.85);
+    border: 2px solid var(--font-clr);
+    border-radius: 0.2rem;
 }
 
 hr {

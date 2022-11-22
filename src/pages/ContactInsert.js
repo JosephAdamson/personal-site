@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState} from "react";
-import github from "../assets/github.png"
-import linkedin from "../assets/linkedin.png";
+import { useEffect, useRef, useState , useContext } from "react";
+import github_dark from "../assets/github_dark.png"
+import github_light from "../assets/github_light.png";
+import linkedin_light from "../assets/linkedin_light.png";
+import linkedin_dark from "../assets/linkedin_dark.png";
 import ThemeButton from "../components/ThemeButton";
 import Footer from "../components/Footer";
+import { ThemeContext } from "../App";
 
 
 function ContactInsert() {
@@ -13,6 +16,7 @@ function ContactInsert() {
     const [submitted, setSubmitted] = useState(false);
     const [displayAlert, setDisplayAlert] = useState(false);
     const contactForm = useRef();
+    const [theme] = useContext(ThemeContext);
 
     const nameOnChangeHandler = (e) => {
         setName(e.target.value);
@@ -46,7 +50,7 @@ function ContactInsert() {
 
     return (
         <div className="flex flex-col items-center md:p-2">
-            <div className="flex items-start w-2/3 md:w-2/3 my-4">
+            <div className="flex items-start w-2/3 md:w-7/12 my-4">
                 <ThemeButton/>
             </div>
             <form 
@@ -71,10 +75,6 @@ function ContactInsert() {
                     Check that the name, email and comment box have been filled in.</p></div> :
                     ""}
                 </div>
-                {/* <div className="flex justify-center my-2">
-                    <h1 className="text-xl">Drop me a message!</h1>
-                </div> */}
-                {/* <hr className="h-1 w-2/3 rounded-sm m-2"/> */}
                 <div className="flex flex-col justify-between w-2/3">
                     <label>name</label>
                     <input type="text" name="name" onChange={nameOnChangeHandler}/>
@@ -89,23 +89,24 @@ function ContactInsert() {
                     <label>comment</label>
                     <textarea className="h-full" name="comment" onChange={commentOnChangeHandler}/>
                 </div>
-                <div className="flex w-2/3 ustify-start my-4">
+                <div className="flex w-2/3 ustify-start my-8">
                     <button form="contact">submit</button>
                 </div>
                 {/* connect netlify form */}
                 <input type="hidden" name="form-name" value="contact" />
             </form>
-            <div className="flex flex-col items-center">
-            {/* <hr className="h-1 w-2/3 rounded-sm m-1"/> */}
-                <div className="flex justify-center">
-                    <div className="flex m1 h-10 w-10 md:h-12 md:w-12 justify-center">
-                        <a href="https://github.com/JosephAdamson" rel="noreferrer" target="_blank"><img 
-                        src={github} alt="me.jpeg"/></a>
-                    </div>
-                    <div className="flex m1 h-10 w-10 md:h-12 md:w-12 justify-center">
-                        <a href="https://uk.linkedin.com/in/joseph-adamson-b677a513b" rel="noreferrer" target="_blank"><img 
-                        src={linkedin} alt="me.jpeg"/></a>
-                    </div>
+            <div className="flex justify-center gap-4">
+                <div className="flex m1 h-6 w-6 md:h-8 md:w-8 justify-center">
+                    <a href="https://github.com/JosephAdamson" rel="noreferrer" target="_blank"><img 
+                    src={
+                        theme === "light" ? github_light : github_dark
+                    } alt="me.jpeg"/></a>
+                </div>
+                <div className="flex m1 h-6 w-6 md:h-8 md:w-8 justify-center">
+                    <a href="https://uk.linkedin.com/in/joseph-adamson-b677a513b" rel="noreferrer" target="_blank"><img 
+                    src={
+                        theme === "light" ? linkedin_light : linkedin_dark
+                    } alt="me.jpeg"/></a>
                 </div>
             </div>
             <Footer/>

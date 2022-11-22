@@ -29,18 +29,19 @@ function ProjectModal(props) {
             onRequestClose={closeModal}
             className="flex h-screen w-screen justify-center items-center border-2"
             > 
-                <div className="flex flex-col w-2/3 h-2/3 project-modal justify-center 
+                <div className="flex flex-col w-2/3 h-5/6 project-modal justify-center 
                 items-center gap-2 p-4 rounded-lg">
-                
-                    <img className="object-fit md:h-2/3 rounded-lg" src={props.img} alt={props.title}/>
+                    <div className="w-11/12 py-2">
+                        <button onClick={closeModal}>close</button>
+                    </div>
+                    <img className="object-fit md:h-2/3 rounded-lg py-2" src={props.img} alt={props.title}/>
                     <div className="flex w-2/3 gap-4 underline">
                         <a href={props.github} target="_blank" rel="noreferrer">source</a>
                         <a href={props.live} target="_blank" rel="noreferrer">live</a>
                     </div>
-                    <p className="w-2/3">
+                    <p className="md:w-2/3">
                         {props.description}
                     </p>
-                    <button onClick={closeModal}>close</button>
                 </div>
 
             </Modal>
