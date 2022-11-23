@@ -51,8 +51,6 @@ function ContactInsert() {
         try {
            const form = e.target;
            const formData = new FormData(form);
-           const d = new URLSearchParams(formData).toString();
-           console.log(d);
 
            fetch("/", {
             method: "POST",
@@ -162,61 +160,6 @@ function ContactInsert() {
                         <img className="h-40 w-40" 
                         src={theme === "light" ? sent_light : sent_dark} alt="sent"/>
                     </div>}
-            {/* <form 
-            className="flex flex-col items-center justify-center w-5/6 md:h-full" 
-            method="POST"
-            name="contact"
-            id="contact"
-            ref={contactForm}
-            type="submit"
-            onSubmit={(e) => {
-                e.preventDefault();
-                validateFormData();
-                // if(!isError) {
-                //     contactForm.current.submit();
-                // }
-            }}
-            netlify>
-                <div className="flex w-2/3 justify-center">
-                    {displayAlert ?
-                    <div className="flex w-full justify-center rounded-md px-2 alert-box bg-[#cf0a1e]">
-                    <p><span className="font-bold">Error:</span> Seems like you're missing something chief...
-                    Check that the name, email and comment box have been filled in.</p></div> :
-                    ""}
-                </div>
-                <div className="flex flex-col justify-between w-2/3">
-                    <label>name</label>
-                    <input type="text" name="name" onChange={nameOnChangeHandler}/>
-                </div>
-                <br/>
-                <div className="flex flex-col justify-between w-2/3">
-                    <label>email</label>
-                    <input type="text" name="email" onChange={emailOnChangeHandler}/>
-                </div>
-                <br/>
-                <div className="flex flex-col justify-between w-2/3 h-40">
-                    <label>comment</label>
-                    <textarea className="h-full" name="comment" onChange={commentOnChangeHandler}/>
-                </div>
-                <div className="flex w-2/3 justify-start my-8">
-                    <button form="contact">submit</button>
-                    <div className="flex justify-center gap-2 md:gap-8 w-full">
-                        <div className="flex m1 h-6 w-6 md:h-8 md:w-8 justify-center">
-                            <a href="https://github.com/JosephAdamson" rel="noreferrer" target="_blank"><img 
-                            src={
-                                theme === "light" ? github_light : github_dark
-                            } alt="me.jpeg"/></a>
-                        </div>
-                        <div className="flex m1 h-6 w-6 md:h-8 md:w-8 justify-center">
-                            <a href="https://uk.linkedin.com/in/joseph-adamson-b677a513b" rel="noreferrer" target="_blank"><img 
-                            src={
-                                theme === "light" ? linkedin_light : linkedin_dark
-                            } alt="me.jpeg"/></a>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" name="form-name" value="contact" />
-            </form> */}
         </div>
     );
 }

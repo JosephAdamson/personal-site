@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import AccordianCard from "./AccordianCard";
 import sleep from "../utils/helper.js"
 import AboutInsert from "../pages/AboutInsert";
@@ -76,7 +76,7 @@ function AccordianContainer() {
     }
 
     // initial page animation
-    useEffect(() => {  
+    useEffect(() => {
         const animateSetup = async (animation) => {
             for (let key of Object.keys(isLoaded)) {
                 setIsLoaded((isLoaded) => {return {...isLoaded,[key]: true}});
@@ -90,14 +90,20 @@ function AccordianContainer() {
                 animations[key] = "";
             });
             setAnimations({...updatedAnimations});
-            const about = document.querySelector("#card-about");
-            expand(about);
-            setAnimationFinshed(true);
         }
         // get the screen width to determine the animation
-        const animation = (window.innerWidth < 768) ? "card-drop-x" : "card-drop-y";
-        animateSetup(animation);
-    },[])
+        if (navigator.userAgent.indexOf("Chrome") !== -1) {
+            const animation = (window.innerWidth < 768) ? "card-drop-x" : "card-drop-y";
+            animateSetup(animation);
+        } else {
+            for (let key of Object.keys(isLoaded)) {
+                setIsLoaded((isLoaded) => {return {...isLoaded,[key]: true}});
+            }
+        }
+        const about = document.querySelector("#card-about");
+        expand(about);
+        setAnimationFinshed(true);
+    }, [])
 
     return (
         <>

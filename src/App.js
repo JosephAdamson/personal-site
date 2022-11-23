@@ -6,7 +6,7 @@ export const ThemeContext = createContext();
 Modal.setAppElement("#root");
 
 function App() {
-    const [theme, setTheme] = useState();
+    const [theme, setTheme] = useState();;
 
     // load theme on startup
     useEffect(() => {
