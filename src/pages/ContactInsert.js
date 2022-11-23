@@ -125,17 +125,17 @@ function ContactInsert() {
                         </div>
                         <div className="flex flex-col justify-between w-2/3">
                             <label>name</label>
-                            <input type="text" name="name" onChange={nameOnChangeHandler}/>
+                            <input type="text" name="sender-name" onChange={nameOnChangeHandler}/>
                         </div>
                         <br/>
                         <div className="flex flex-col justify-between w-2/3">
                             <label>email</label>
-                            <input type="text" name="email" onChange={emailOnChangeHandler}/>
+                            <input type="text" name="sender-email" onChange={emailOnChangeHandler}/>
                         </div>
                         <br/>
                         <div className="flex flex-col justify-between w-2/3 h-40">
                             <label>comment</label>
-                            <textarea className="h-full" name="comment" onChange={commentOnChangeHandler}/>
+                            <textarea className="h-full" name="sender-comment" onChange={commentOnChangeHandler}/>
                         </div>
                         <div className="flex w-2/3 justify-start my-8">
                             <button form="contact">submit</button>
