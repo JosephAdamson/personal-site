@@ -90,6 +90,9 @@ function AccordianContainer() {
                 animations[key] = "";
             });
             setAnimations({...updatedAnimations});
+            const about = document.querySelector("#card-about");
+            expand(about);
+            setAnimationFinshed(true);
         }
         // get the screen width to determine the animation
         if (navigator.userAgent.indexOf("Chrome") !== -1) {
@@ -98,11 +101,11 @@ function AccordianContainer() {
         } else {
             for (let key of Object.keys(isLoaded)) {
                 setIsLoaded((isLoaded) => {return {...isLoaded,[key]: true}});
+                const about = document.querySelector("#card-about");
+                expand(about);
+                setAnimationFinshed(true);
             }
         }
-        const about = document.querySelector("#card-about");
-        expand(about);
-        setAnimationFinshed(true);
     }, [])
 
     return (
