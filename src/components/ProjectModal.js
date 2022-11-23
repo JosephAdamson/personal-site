@@ -43,7 +43,6 @@ function ProjectModal(props) {
                         {props.description}
                     </p>
                 </div>
-
             </Modal>
         </div>
     )
