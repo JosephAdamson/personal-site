@@ -47,6 +47,7 @@ function ContactInsert() {
     }
 
     const submitForm = async (e) => {
+
         try {
            const form = e.target;
            const formData = new FormData(form);
@@ -70,7 +71,6 @@ function ContactInsert() {
             await sleep(1000);
             const about = document.querySelector("#card-about");
             about.click();
-            resetFields();
             await sleep(500);
             setSucess(false);
             setSubmitted(false);
@@ -110,6 +110,7 @@ function ContactInsert() {
                         validateFormData();
                         if(!isError) {
                             submitForm(e);
+                            resetFields();
                         }
                     }}
                     netlify>
