@@ -191,6 +191,13 @@ Custom styles
     background-color: var(--bg-clr);
 }
 
+.project-btn {
+    background-color: var(--bg-clr);
+    color: var(--font-clr);
+    border: 2px solid var(--font-clr);
+    padding: 0.2rem;
+}
+
 /* card drop x */
 @-webkit-keyframes card-drop-x {
     0% {-webkit-transform: translateX(-120%);}

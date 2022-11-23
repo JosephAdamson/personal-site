@@ -52,7 +52,7 @@ function ProjectInsert() {
 
     return (
         <div className="flex flex-col justify-left items-center">
-            <div className="flex items-start w-4/6 my-1 md:my-6">
+            <div className="flex items-start w-7/12 md:w-2/3 my-1 md:my-6">
                 <ThemeButton/>
             </div>
             <div className="grid p-4 md:grid-cols-2 m-2 gap-2 w-2/3">

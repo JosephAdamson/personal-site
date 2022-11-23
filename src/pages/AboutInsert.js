@@ -8,7 +8,7 @@ Pseudo container for the 'About' section
 function AboutInsert() {
     return (
         <div className="flex flex-col justify-left items-center">
-            <div className="flex items-start w-4/6 md:w-4/6 my-4">
+            <div className="flex items-start w-7/12 md:w-4/6 my-4">
                 <ThemeButton/>
             </div>
             <div className="flex m-4 justify-center">

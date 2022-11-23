@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import AccordianCard from "./AccordianCard";
 import sleep from "../utils/helper.js"
 import AboutInsert from "../pages/AboutInsert";
