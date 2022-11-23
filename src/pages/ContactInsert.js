@@ -46,6 +46,22 @@ function ContactInsert() {
         setComment("");
     }
 
+    const submitForm = async (e) => {
+        try {
+           const form = e.target;
+           const formData = new FormData(form);
+
+           fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams(formData).toString()
+           })
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 
     useEffect(() => {
 
@@ -68,6 +84,7 @@ function ContactInsert() {
                 setSubmitted(false);
             }, 8000);
         }
+
         if (submitted && !isError) {
             onSuccessHandler();
         }
@@ -89,13 +106,10 @@ function ContactInsert() {
                     ref={contactForm}
                     type="submit"
                     onSubmit={(e) => {
-                        console.log(submitted);
-                        console.log(isError);
-                        console.log(success);
                         e.preventDefault();
                         validateFormData();
                         if(!isError) {
-                            contactForm.current.submit();
+                            submitForm(e);
                         }
                     }}
                     netlify>

@@ -19,6 +19,7 @@ function AccordianContainer() {
             "card-blog": false
         }
     );
+    
     const [isLoaded, setIsLoaded] = useState(
         {
             "card-about": false,
