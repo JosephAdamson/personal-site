@@ -51,13 +51,15 @@ function ContactInsert() {
         try {
            const form = e.target;
            const formData = new FormData(form);
+           const d = new URLSearchParams(formData).toString();
+           console.log(d);
 
            fetch("/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: new URLSearchParams(...formData).toString()
+            body: new URLSearchParams(formData).toString()
            })
         } catch (error) {
             console.log(error.message);
