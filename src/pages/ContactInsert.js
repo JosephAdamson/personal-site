@@ -57,7 +57,7 @@ function ContactInsert() {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: new URLSearchParams(formData).toString()
+            body: new URLSearchParams(...formData).toString()
            })
         } catch (error) {
             console.log(error.message);
